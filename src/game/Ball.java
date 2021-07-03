@@ -1,6 +1,6 @@
 package game;
 
-import game.framework.BasicElement;
+import game.framework.Entity;
 import game.framework.Game;
 import game.framework.Params;
 import javafx.scene.canvas.GraphicsContext;
@@ -12,7 +12,7 @@ import javafx.scene.paint.Paint;
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
-public class Ball extends BasicElement {
+public class Ball extends Entity {
     public Ball(int px, int py) {
         super(px, py);
     }

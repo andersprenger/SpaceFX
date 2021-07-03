@@ -8,7 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
-public abstract class BasicElement implements Character {
+public abstract class Entity implements Character {
     int direction_horizontal = 0, direction_vertical = 0;
     int lminV = 0, lmaxV = Params.WINDOW_HEIGHT;
     int lminH = 0, lmaxH = Params.WINDOW_WIDTH;
@@ -18,7 +18,7 @@ public abstract class BasicElement implements Character {
     int posX, posY;
     int speed = 2;
 
-    public BasicElement(int startX, int startY) {
+    public Entity(int startX, int startY) {
         posX = startX;
         posY = startY;
     }

@@ -1,6 +1,7 @@
 package game.framework;
 
 import game.Ball;
+import game.Pinguim;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 
@@ -16,7 +17,7 @@ import java.util.LinkedList;
 public class Game {
     private static Game game = null;
     private Cannon cannon;
-    private List<Character> activeChars;
+    private List<Character> activeCharacters;
     private boolean gameOver;
     private int score;
 
@@ -45,36 +46,36 @@ public class Game {
         if (game == null) {
             game = new Game();
         }
-        return (game);
+        return game;
     }
 
     public void addChar(Character c) {
-        activeChars.add(c);
+        activeCharacters.add(c);
         c.start();
     }
 
     public void eliminate(Character c) {
-        activeChars.remove(c);
+        activeCharacters.remove(c);
     }
 
     public void start() {
         // Repositório de personagens
-        activeChars = new LinkedList<>();
+        activeCharacters = new LinkedList<>();
 
         // Adiciona o canhão
         cannon = new Cannon(400, 550);
-        activeChars.add(cannon);
+        activeCharacters.add(cannon);
 
         // Adiciona bolas
         for (int i = 0; i < 5; i++) {
-            activeChars.add(new Ball(100 + (i * 60), 60 + i * 40));
+            activeCharacters.add(new Ball(100 + (i * 60), 60 + i * 40));
         }
 
-        // Adiciona pinguim (bugado)
-//        activeChars.add(new Pinguim(100, 270));
-//        activeChars.add(new Pinguim(10,300));
+        //Adiciona pinguim (bugado)
+        activeCharacters.add(new Pinguim(100, 270));
+        activeCharacters.add(new Pinguim(10,300));
 
-        for (Character c : activeChars) {
+        for (Character c : activeCharacters) {
             c.start();
         }
     }
@@ -84,11 +85,11 @@ public class Game {
             return;
         }
 
-        for (int i = 0; i < activeChars.size(); i++) {
-            Character este = activeChars.get(i);
+        for (int i = 0; i < activeCharacters.size(); i++) {
+            Character este = activeCharacters.get(i);
             este.update(deltaTime);
-            for (int j = 0; j < activeChars.size(); j++) {
-                Character outro = activeChars.get(j);
+            for (int j = 0; j < activeCharacters.size(); j++) {
+                Character outro = activeCharacters.get(j);
                 if (este != outro) {
                     este.testCollision(outro);
                 }
@@ -101,7 +102,7 @@ public class Game {
     }
 
     public void draw(GraphicsContext graphicsContext) {
-        for (Character c : activeChars) {
+        for (Character c : activeCharacters) {
             c.draw(graphicsContext);
         }
     }

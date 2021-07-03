@@ -10,7 +10,7 @@ import javafx.scene.paint.Paint;
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
-public class Cannon extends BasicElement implements InputControl {
+public class Cannon extends Entity implements InputControl {
     private int RELOAD_TIME = 100000000; // Time is in nanoseconds
     private int shot_timer = 0;
 

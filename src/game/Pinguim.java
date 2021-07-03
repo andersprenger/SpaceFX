@@ -1,6 +1,6 @@
 package game;
 
-import game.framework.BasicElement;
+import game.framework.Entity;
 import game.framework.Character;
 import game.framework.Game;
 import game.framework.Params;
@@ -14,7 +14,7 @@ import javafx.scene.image.Image;
  * @author Rafael Copstein
  */
 
-public class Pinguim extends BasicElement {
+public class Pinguim extends Entity {
     private Image image;
 
     public Pinguim(int px, int py) {
