@@ -1,5 +1,6 @@
 module SpaceFX {
     requires javafx.controls;
 
-    opens main.java;
+    opens game;
+    opens game.framework;
 }

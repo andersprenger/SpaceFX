@@ -1,6 +1,13 @@
-package main.java;
+package game.framework;
 
 import java.util.Random;
+
+/**
+ * Params
+ *
+ * @author Bernardo Copstein
+ * @author Rafael Copstein
+ */
 
 public class Params {
     public static final String WINDOW_TITLE = "My Game V1.0";
@@ -10,18 +17,18 @@ public class Params {
     private static Params params = null;
     private Random rnd;
 
-    private Params(){
+    private Params() {
         rnd = new Random();
     }
 
-    public static Params getInstance(){
-        if (params == null){
+    public static Params getInstance() {
+        if (params == null) {
             params = new Params();
         }
-        return(params);
+        return (params);
     }
 
-    public int nextInt(int lim){
-        return(rnd.nextInt(lim));
+    public int nextInt(int lim) {
+        return (rnd.nextInt(lim));
     }
 }

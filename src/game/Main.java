@@ -1,19 +1,21 @@
-package main.java;
+package game;
 
+import game.framework.Game;
+import game.framework.Params;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
  * Handles window initialization and primary game setup
- * @author Bernardo Copstein, Rafael Copstein
+ *
+ * @author Bernardo Copstein
+ * @author Rafael Copstein
  */
 
 public class Main extends Application {
@@ -24,42 +26,40 @@ public class Main extends Application {
         stage.setResizable(false);
 
         Group root = new Group();
-        Scene scene = new Scene( root );
-        stage.setScene( scene );
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
 
-        Canvas canvas = new Canvas(Params.WINDOW_WIDTH, Params.WINDOW_HEIGHT );
+        Canvas canvas = new Canvas(Params.WINDOW_WIDTH, Params.WINDOW_HEIGHT);
 
-        root.getChildren().add( canvas );
+        root.getChildren().add(canvas);
 
         // Setup Game object
-        Game.getInstance().Start();
+        Game.getInstance().start();
 
         // Register User Input Handler
         scene.setOnKeyPressed((KeyEvent event) -> {
-            Game.getInstance().OnInput(event.getCode(), true);
+            Game.getInstance().onInput(event.getCode(), true);
         });
 
         scene.setOnKeyReleased((KeyEvent event) -> {
-            Game.getInstance().OnInput(event.getCode(), false);
+            Game.getInstance().onInput(event.getCode(), false);
         });
 
         // Register Game Loop
         final GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        new AnimationTimer()
-        {
+        new AnimationTimer() {
             long lastNanoTime = System.nanoTime();
 
             @Override
-            public void handle(long currentNanoTime)
-            {
+            public void handle(long currentNanoTime) {
                 long deltaTime = currentNanoTime - lastNanoTime;
 
-                Game.getInstance().Update(currentNanoTime, deltaTime);
+                Game.getInstance().update(currentNanoTime, deltaTime);
                 gc.clearRect(0, 0, Params.WINDOW_WIDTH, Params.WINDOW_HEIGHT);
-                gc.fillText("Pontos: "+Game.getInstance().getPontos(), 10, 10);
-                Game.getInstance().Draw(gc);
-                if (Game.getInstance().isGameOver()){
+                gc.fillText("Pontos: " + Game.getInstance().getScore(), 10, 10);
+                Game.getInstance().draw(gc);
+                if (Game.getInstance().isGameOver()) {
                     stop();
                 }
 
