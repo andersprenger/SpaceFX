@@ -2,10 +2,10 @@ package app.game.entities.player;
 
 import app.game.Game;
 import app.game.entities.shots.Shot;
-import app.game.objects.Entity;
-import app.game.objects.GameObject;
-import app.game.tools.InputControl;
-import app.game.tools.Params;
+import app.game.abstracts.Entity;
+import app.game.abstracts.GameObject;
+import app.game.util.InputControl;
+import app.game.util.Params;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Paint;

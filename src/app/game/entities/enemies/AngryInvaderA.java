@@ -1,6 +1,6 @@
 package app.game.entities.enemies;
 
-import app.game.objects.GameObject;
+import app.game.abstracts.GameObject;
 
 /**
  * Represents a simple enemy that crosses the screen over and over again and has lives

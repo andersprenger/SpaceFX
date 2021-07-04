@@ -1,4 +1,4 @@
-package app.game.objects;
+package app.game.abstracts;
 
 import app.game.entities.shots.EnemyShot;
 import javafx.scene.image.Image;

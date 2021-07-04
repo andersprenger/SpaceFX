@@ -1,9 +1,8 @@
 package app.game.entities.enemies;
 
-import app.game.objects.GameObject;
 import app.game.Game;
-import app.game.tools.Params;
-import app.game.objects.Enemy;
+import app.game.util.Params;
+import app.game.abstracts.Enemy;
 import javafx.scene.canvas.GraphicsContext;
 
 /**

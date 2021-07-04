@@ -1,7 +1,7 @@
-package app.game.objects;
+package app.game.abstracts;
 
 import app.game.Game;
-import app.game.tools.Params;
+import app.game.util.Params;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.LinkedList;

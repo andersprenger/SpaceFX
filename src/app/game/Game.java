@@ -3,7 +3,7 @@ package app.game;
 import app.Main;
 import app.game.entities.enemies.AngryInvaderB;
 import app.game.entities.player.Cannon;
-import app.game.objects.GameObject;
+import app.game.abstracts.GameObject;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 

@@ -1,7 +1,7 @@
 package app;
 
 import app.game.Game;
-import app.game.tools.Params;
+import app.game.util.Params;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -77,7 +77,7 @@ public class Main extends Application {
                 gc.clearRect(0, 0, Params.WINDOW_WIDTH, Params.WINDOW_HEIGHT);
                 gc.setFill(Paint.valueOf("#FFFFFF"));
                 gc.fillText("SCORE: " + Game.getInstance().getScore(), 10, 20);
-                gc.fillText("LEVEL: " + 3, 120, 20);
+                gc.fillText("LEVEL: " + Game.getInstance().getLevel(), 120, 20);
                 gc.fillText("LIVES: " + Game.getInstance().getLives(), 200, 20);
                 gc.setFont(new Font("Arial Bold", 15));
 

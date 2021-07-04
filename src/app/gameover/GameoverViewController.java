@@ -2,6 +2,7 @@ package app.gameover;
 
 import app.Main;
 import app.game.Game;
+import app.game.util.InputControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,7 +19,7 @@ import java.util.ResourceBundle;
  *
  * @author Anderson Sprenger (19111109-5)
  */
-public class GameoverViewController implements Initializable {
+public abstract class GameoverViewController implements Initializable, InputControl {
     @FXML Button goToMenuButton;
     @FXML Button tryAgainButton;
 
