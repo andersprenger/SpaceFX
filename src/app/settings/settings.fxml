@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.settings.SettingsViewController"
-            prefHeight="400.0" prefWidth="600.0">
+<GridPane fx:id="pane" alignment="CENTER" hgap="10" style="-fx-background-color: black;" vgap="10"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="app.settings.SettingsViewController">
 
-</AnchorPane>
+    <Label text="Settings" textFill="WHITE" GridPane.rowIndex="0">
+        <font>
+            <Font name="Arial Bold" size="48.0"/>
+        </font>
+    </Label>
+
+    <Label text="Update your name:" textFill="WHITE" GridPane.rowIndex="1">
+        <font>
+            <Font name="Arial" size="18.0"/>
+        </font>
+    </Label>
+
+    <TextField GridPane.rowIndex="2"/>
+
+    <HBox prefHeight="100.0" prefWidth="200.0" spacing="105" GridPane.rowIndex="3">
+        <Button mnemonicParsing="false" text="Back"/>
+        <Button mnemonicParsing="false" text="Update"/>
+    </HBox>
+
+    <Label layoutX="10.0" layoutY="27.0" text="Name changed!" textFill="WHITE" visible="false" GridPane.rowIndex="4">
+        <font>
+            <Font name="Arial" size="18.0"/>
+        </font>
+    </Label>
+
+</GridPane>

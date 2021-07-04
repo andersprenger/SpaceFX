@@ -1,14 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.scores.ScoresViewController"
-            prefHeight="400.0" prefWidth="600.0">
+<GridPane alignment="CENTER" hgap="10" style="-fx-background-color: black;" vgap="10"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="app.scores.ScoresViewController">
 
-</AnchorPane>
+   <Label text="High Scores" textFill="WHITE">
+      <font>
+         <Font name="Arial Bold" size="48.0"/>
+      </font>
+   </Label>
+
+   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="1.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p1name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p1score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="2.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p2name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p2score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="3.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p3name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p3score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="4.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p4name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p4score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="5.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p5name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p5score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="6.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p6name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p6score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="7.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p7name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p7score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="8.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p8name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p8score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="9.  " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p9name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p9score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <HBox spacing="20">
+         <Label layoutX="10.0" layoutY="10.0" text="10. " textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p10name" text="Name" textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+
+         <Label fx:id="p10score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score" textAlignment="RIGHT"
+                textFill="WHITE">
+            <font>
+               <Font name="Arial" size="24.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+   </VBox>
+
+</GridPane>

@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.gameover.GameoverViewController"
-            prefHeight="400.0" prefWidth="600.0">
+<GridPane fx:id="pane" alignment="CENTER" hgap="10" style="-fx-background-color: black;" vgap="10"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="app.gameover.GameoverViewController">
 
-</AnchorPane>
+    <Label text="Score: 00000" textFill="WHITE" GridPane.rowIndex="0">
+        <font>
+            <Font name="Arial Bold" size="18.0"/>
+        </font>
+    </Label>
+
+    <Label text="Level: 10" textFill="WHITE" GridPane.rowIndex="1">
+        <font>
+            <Font name="Arial Bold" size="18.0"/>
+        </font>
+    </Label>
+
+    <HBox spacing="20" GridPane.rowIndex="2">
+
+        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Menu"/>
+        <Button mnemonicParsing="false" text="Try Again"/>
+
+    </HBox>
+
+</GridPane>
