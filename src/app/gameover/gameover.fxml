@@ -8,13 +8,13 @@
           xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="app.gameover.GameoverViewController">
 
-    <Label text="Score: 00000" textFill="WHITE" GridPane.rowIndex="0">
+    <Label fx:id="scoreLabel" text="Score: 00000" textFill="WHITE" GridPane.rowIndex="0">
         <font>
             <Font name="Arial Bold" size="18.0"/>
         </font>
     </Label>
 
-    <Label text="Level: 10" textFill="WHITE" GridPane.rowIndex="1">
+    <Label fx:id="levelLabel" text="Level: 10" textFill="WHITE" GridPane.rowIndex="1">
         <font>
             <Font name="Arial Bold" size="18.0"/>
         </font>
@@ -22,8 +22,9 @@
 
     <HBox spacing="20" GridPane.rowIndex="2">
 
-        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Menu"/>
-        <Button mnemonicParsing="false" text="Try Again"/>
+        <!--sem default button porque eh muito easy apertar por engano-->
+        <Button fx:id="goToMenuButton" text="Menu" onAction="#buttonPressed" prefWidth="80"/>
+        <Button fx:id="tryAgainButton" text="Try Again" onAction="#buttonPressed" prefWidth="80"/>
 
     </HBox>
 

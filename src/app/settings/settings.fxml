@@ -23,8 +23,8 @@
     <TextField GridPane.rowIndex="2"/>
 
     <HBox prefHeight="100.0" prefWidth="200.0" spacing="105" GridPane.rowIndex="3">
-        <Button mnemonicParsing="false" text="Back"/>
-        <Button mnemonicParsing="false" text="Update"/>
+        <Button fx:id="settingsBackToMenuButton" text="Back" onAction="#buttonPressed" cancelButton="true"/>
+        <Button fx:id="updateName" text="Update" onAction="#buttonPressed"/>
     </HBox>
 
     <Label layoutX="10.0" layoutY="27.0" text="Name changed!" textFill="WHITE" visible="false" GridPane.rowIndex="4">

@@ -1,11 +1,13 @@
 package app.game;
 
+import app.Main;
 import app.game.entities.enemies.AngryInvaderB;
 import app.game.entities.player.Cannon;
 import app.game.objects.GameObject;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.LinkedList;
 
@@ -23,6 +25,7 @@ public class Game {
     private boolean gameOver;
     private int score;
     private int lives;
+    private int level;
 
     private Game() {
         gameOver = false;
@@ -32,6 +35,11 @@ public class Game {
 
     public void setGameOver() {
         gameOver = true;
+        try {
+            Main.screen.setScene(Main.startGameOver());
+        } catch (IOException e) {
+            System.err.println(e);
+        }
     }
 
     public boolean isGameOver() {
@@ -48,6 +56,10 @@ public class Game {
 
     public int getLives() {
         return lives;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public void decreaseLives() {
@@ -75,6 +87,9 @@ public class Game {
     }
 
     public void start() {
+        //seta gameover para false, case try again...
+        gameOver = false;
+
         // Repositório de personagens
         activeGameObjects = new LinkedList<>();
 
@@ -98,7 +113,7 @@ public class Game {
         }
 
         if (activeGameObjects.stream().noneMatch((e) -> (e.isEnemy()))) {
-            // System.out.println("w/o enemies"); load another level
+            setGameOver();
         }
 
         for (int i = 0; i < activeGameObjects.size(); i++) {

@@ -4,17 +4,15 @@ import app.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
 import java.io.IOException;
 
 /**
- * MenuController.java <p/>
+ * MenuController.java
  * Controls the menu screen represented by the menu.fxml file.
  *
- * @author Anderson Sprenger
+ * @author Anderson Sprenger (19111109-5)
  */
-
 public class MenuViewController {
 
     @FXML Button play;

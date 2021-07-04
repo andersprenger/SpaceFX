@@ -33,10 +33,16 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         screen = stage;
 
-        Parent fxml = FXMLLoader.load(getClass().getResource("menu/menu.fxml"));
         screen.setTitle(Params.WINDOW_TITLE);
-        screen.setScene(new Scene(fxml, Params.WINDOW_WIDTH, Params.WINDOW_HEIGHT));
+        screen.setScene(startMenu());
         screen.show();
+    }
+
+    public static Scene startMenu() throws IOException {
+        Parent fxml = FXMLLoader.load(Main.class.getResource("menu/menu.fxml"));
+        Scene scene = new Scene(fxml, Params.WINDOW_WIDTH, Params.WINDOW_HEIGHT);
+
+        return scene;
     }
 
     public static Scene startGame() {
