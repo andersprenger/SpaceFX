@@ -3,6 +3,7 @@ package game.entities.player;
 import game.*;
 import game.entities.shots.Shot;
 import game.objects.Entity;
+import game.objects.GameObject;
 import game.tools.InputControl;
 import game.tools.Params;
 import javafx.scene.canvas.GraphicsContext;
@@ -31,10 +32,13 @@ public class Cannon extends Entity implements InputControl {
     }
 
     @Override
+    public void addCollider(GameObject o) {
+        super.addCollider(o);
+        Game.getInstance().decreaseLives();
+    }
+
+    @Override
     public void update(long deltaTime) {
-        if (didCollide()) {
-            Game.getInstance().setGameOver();
-        }
         setPosX(getX() + getDirH() * getSpeed());
         if (shot_timer > 0) shot_timer -= deltaTime;
     }

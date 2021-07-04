@@ -14,6 +14,8 @@ public interface GameObject {
 
     int getId();
 
+    void addCollider(GameObject o);
+
     int getX();
 
     int getY();

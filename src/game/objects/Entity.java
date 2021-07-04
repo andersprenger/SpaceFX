@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Represents the basic game character
  *
+ * @author Anderson Sprenger
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
@@ -44,6 +45,15 @@ public abstract class Entity implements GameObject {
         return id;
     }
 
+    public void addCollider(GameObject o) {
+        addCollider(o, true);
+    }
+
+    protected void addCollider(GameObject o, boolean b) {
+        collidersId.add(o.getId());
+        setCollide(b);
+    }
+
     @Override
     public int getX() {
         return (posX);
@@ -67,7 +77,6 @@ public abstract class Entity implements GameObject {
     @Override
     public void testCollision(GameObject anotherGameObject) {
         if (collided || collidersId.contains(anotherGameObject.getId())) {
-            System.out.println(collidersId.contains(anotherGameObject.getId()));
             return;
         }
 
@@ -84,8 +93,8 @@ public abstract class Entity implements GameObject {
 
         // Verifica colisão
         if (p1x < op2x && p2x > op1x && p1y < op2y && p2y > op1y) {
-            collidersId.add(anotherGameObject.getId());
-            setCollide(true); // same for collided
+            this.addCollider(anotherGameObject);
+            anotherGameObject.addCollider(this);
         }
     }
 

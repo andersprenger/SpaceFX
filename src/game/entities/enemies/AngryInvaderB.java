@@ -9,6 +9,7 @@ import game.objects.GameObject;
  */
 
 public class AngryInvaderB extends InvaderB {
+    boolean wasShot;
 
     public AngryInvaderB(int px, int py) {
         super(px, py);
@@ -16,5 +17,17 @@ public class AngryInvaderB extends InvaderB {
 
     public AngryInvaderB(int px, int py, int speed) {
         super(px, py, speed);
+    }
+
+    @Override
+    public void addCollider(GameObject o) {
+        if (!wasShot) {
+            super.addCollider(o, false);
+
+            wasShot = true;
+            setImage("resources/enemies/4.png");
+        }
+
+        super.addCollider(o);
     }
 }
