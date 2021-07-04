@@ -1,9 +1,9 @@
-package game.framework;
+package game;
 
 import javafx.scene.input.KeyCode;
 
 /**
- * Represents the basic game character
+ * Implemented if an entity interacts with user input
  *
  * @author Bernardo Copstein
  * @author Rafael Copstein

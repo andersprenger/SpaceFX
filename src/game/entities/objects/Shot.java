@@ -1,5 +1,7 @@
-package game.framework;
+package game.entities.objects;
 
+import game.Character;
+import game.Entity;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 
@@ -30,6 +32,10 @@ public class Shot extends Entity {
         }
     }
 
+    public void superTestCollision(Character anotherCharacter) {
+        super.testCollision(anotherCharacter);
+    }
+
     @Override
     public void update(long deltaTime) {
         if (didCollide()) {
@@ -45,6 +51,11 @@ public class Shot extends Entity {
     }
 
     @Override
+    public boolean isEnemy() {
+        return false;
+    }
+
+    @Override
     public int getHeight() {
         return 16;
     }
@@ -56,6 +67,6 @@ public class Shot extends Entity {
 
     public void draw(GraphicsContext graphicsContext) {
         graphicsContext.setFill(Paint.valueOf("#00FF00"));
-        graphicsContext.fillOval(getX(), getY(), 8, 16);
+        graphicsContext.fillRect(getX(), getY(), 8, 16);
     }
 }

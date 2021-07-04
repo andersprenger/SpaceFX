@@ -1,4 +1,4 @@
-package game.framework;
+package game;
 
 import javafx.scene.canvas.GraphicsContext;
 
@@ -9,6 +9,8 @@ import javafx.scene.canvas.GraphicsContext;
  * @author Rafael Copstein
  */
 public interface Character {
+    boolean isEnemy();
+
     int getX();
 
     int getY();
