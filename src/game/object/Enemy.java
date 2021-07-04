@@ -9,9 +9,9 @@ import javafx.scene.image.Image;
  */
 
 public abstract class Enemy extends Entity {
-    protected Image image;
+    public Image image;
 
-    protected void setImage(String imagePath) {
+    public void setImage(String imagePath) {
         try {
             // Carrega a imagem ajustando a altura para 40 pixels
             // mantendo a proporção em ambas dimensões

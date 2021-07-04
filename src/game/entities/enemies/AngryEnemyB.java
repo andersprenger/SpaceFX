@@ -24,6 +24,8 @@ public class AngryEnemyB extends EnemyB {
     public void testCollision(GameObject anotherGameObject) {
         if (!wasShot) {
             wasShot = true;
+            setImage("resources/enemies/4.png");
+
             return;
         }
 

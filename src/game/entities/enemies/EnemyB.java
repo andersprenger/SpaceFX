@@ -16,7 +16,6 @@ import javafx.scene.image.Image;
  * @author Rafael Copstein
  */
 public class EnemyB extends Enemy {
-    private Image image;
     Integer baseSpeed = null;
 
     public EnemyB(int px, int py) {
