@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Represents the basic game character
  *
- * @author Anderson Sprenger
+ * @author Anderson Sprenger (19111109-5)
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */

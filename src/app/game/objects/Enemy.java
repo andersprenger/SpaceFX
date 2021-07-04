@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 /**
  * Basic implementation of an Enemy
  *
- * @author Anderson Sprenger
+ * @author Anderson Sprenger (19111109-5)
  */
 
 public abstract class Enemy extends Entity {

@@ -21,7 +21,7 @@ import java.io.IOException;
 /**
  * Handles window initialization and primary game setup
  *
- * @author Anderson Sprenger
+ * @author Anderson Sprenger (19111109-5)
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */

@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 /**
  * Represents the basic game object
  *
- * @author Anderson Sprenger
+ * @author Anderson Sprenger (19111109-5)
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
