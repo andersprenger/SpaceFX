@@ -1,7 +1,7 @@
-package game.entities.shots;
+package app.game.entities.shots;
 
-import game.objects.GameObject;
-import game.objects.Entity;
+import app.game.objects.GameObject;
+import app.game.objects.Entity;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 

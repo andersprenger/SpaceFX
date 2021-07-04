@@ -1,6 +1,6 @@
-package game.objects;
+package app.game.objects;
 
-import game.entities.shots.EnemyShot;
+import app.game.entities.shots.EnemyShot;
 import javafx.scene.image.Image;
 
 /**

@@ -1,9 +1,8 @@
-package game;
+package app.game;
 
-import game.entities.enemies.AngryInvaderB;
-import game.entities.enemies.InvaderB;
-import game.entities.player.Cannon;
-import game.objects.GameObject;
+import app.game.entities.enemies.AngryInvaderB;
+import app.game.entities.player.Cannon;
+import app.game.objects.GameObject;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 

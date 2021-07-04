@@ -1,4 +1,4 @@
-package game.tools;
+package app.game.tools;
 
 import java.util.Random;
 
@@ -10,7 +10,7 @@ import java.util.Random;
  */
 
 public class Params {
-    public static final String WINDOW_TITLE = "My Game V1.0";
+    public static final String WINDOW_TITLE = "SpaceFX";
     public static final int WINDOW_WIDTH = 800;
     public static final int WINDOW_HEIGHT = 600;
 

@@ -1,51 +1,59 @@
-package game.entities.enemies;
+package app.game.entities.enemies;
 
-import game.objects.GameObject;
-import game.Game;
-import game.tools.Params;
-import game.objects.Enemy;
+import app.game.objects.GameObject;
+import app.game.Game;
+import app.game.tools.Params;
+import app.game.entities.shots.EnemyShot;
+import app.game.objects.Enemy;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
- * Represents a simple enemy that crosses the screen over and over again
+ * Represents a simple enemy that crosses the screen over and over again and shots
  *
  * @author Anderson Sprenger (19111109-5)
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
-public class InvaderA extends Enemy {
+public class InvaderB extends Enemy {
     Integer baseSpeed = null;
 
-    public InvaderA(int px, int py) {
+    public InvaderB(int px, int py) {
         super(px, py);
 
-        setImage("resources/enemies/1.png");
+        setImage("resources/enemies/3.png");
     }
 
-    public InvaderA(int px, int py, int speed) {
+    public InvaderB(int px, int py, int speed) {
         super(px, py);
 
-        setImage("resources/enemies/1.png");
+        setImage("resources/enemies/3.png");
         setSpeed(speed);
         baseSpeed = speed;
     }
 
     @Override
     public void start() {
-        setDirH(1);
+        setDirH(-1);
+        setSpeed(4);
     }
 
     @Override
     public void update(long deltaTime) {
         if (didCollide()) {
             Game.getInstance().addScore();
+            Game.getInstance().addScore();
+            Game.getInstance().addScore();
+
             deactivate();
         } else {
             setPosX(getX() + getDirH() * getSpeed());
-            // Se chegou no lado direito da tela ...
-            if (getX() >= getLMaxH()) {
-                // Reposiciona no lado esquerdo e ...
-                setPosX(getLMinH());
+            if (Params.getInstance().nextInt(200) == 0) {
+                Game.getInstance().addChar(new EnemyShot(getX()+24, getY() + 64));
+            }
+            // Se chegou no lado esquerdo da tela ...
+            if (getX() <= getLMinH()) {
+                // Reposiciona no lado direito e ...
+                setPosX(getLMaxH());
 
                 // Sorteia o passo de avanço [1,5]
                 if (baseSpeed == null) {

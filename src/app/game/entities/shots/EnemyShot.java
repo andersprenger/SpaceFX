@@ -1,12 +1,7 @@
-package game.entities.shots;
+package app.game.entities.shots;
 
-import game.Game;
-import game.entities.enemies.AngryInvaderA;
-import game.entities.enemies.AngryInvaderB;
-import game.entities.enemies.InvaderA;
-import game.objects.Enemy;
-import game.objects.GameObject;
-import game.entities.enemies.InvaderB;
+import app.game.objects.Enemy;
+import app.game.objects.GameObject;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 
