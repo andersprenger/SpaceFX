@@ -1,6 +1,6 @@
 package game;
 
-import game.tool.Params;
+import game.tools.Params;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -45,13 +45,9 @@ public class Main extends Application {
         Game.getInstance().start();
 
         // Register User Input Handler
-        scene.setOnKeyPressed((KeyEvent event) -> {
-            Game.getInstance().onInput(event.getCode(), true);
-        });
+        scene.setOnKeyPressed((KeyEvent event) -> Game.getInstance().onInput(event.getCode(), true));
 
-        scene.setOnKeyReleased((KeyEvent event) -> {
-            Game.getInstance().onInput(event.getCode(), false);
-        });
+        scene.setOnKeyReleased((KeyEvent event) -> Game.getInstance().onInput(event.getCode(), false));
 
         // Register Game Loop
         final GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -68,7 +64,7 @@ public class Main extends Application {
                 gc.setFill(Paint.valueOf("#FFFFFF"));
                 gc.fillText("SCORE: " + Game.getInstance().getScore(), 10, 20);
                 gc.fillText("LEVEL: " + 3, 120, 20);
-                gc.fillText("LIVES: " + 3, 200, 20);
+                gc.fillText("LIVES: " + Game.getInstance().getLives(), 200, 20);
                 gc.setFont(new Font("Arial Bold", 15));
 
                 Game.getInstance().draw(gc);
@@ -85,7 +81,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         launch();
     }
 }

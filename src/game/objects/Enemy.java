@@ -1,5 +1,6 @@
-package game.object;
+package game.objects;
 
+import game.entities.shots.EnemyShot;
 import javafx.scene.image.Image;
 
 /**
@@ -24,6 +25,15 @@ public abstract class Enemy extends Entity {
 
     public Enemy(int startX, int startY) {
         super(startX, startY);
+    }
+
+    @Override
+    public void testCollision(GameObject anotherGameObject) {
+        if (anotherGameObject instanceof Enemy || anotherGameObject instanceof EnemyShot) {
+            return;
+        }
+
+        super.testCollision(anotherGameObject);
     }
 
     @Override

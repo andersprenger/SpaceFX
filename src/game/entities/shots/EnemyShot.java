@@ -1,7 +1,12 @@
-package game.entities.objects;
+package game.entities.shots;
 
-import game.object.GameObject;
-import game.entities.enemies.EnemyB;
+import game.Game;
+import game.entities.enemies.AngryInvaderA;
+import game.entities.enemies.AngryInvaderB;
+import game.entities.enemies.InvaderA;
+import game.objects.Enemy;
+import game.objects.GameObject;
+import game.entities.enemies.InvaderB;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 
@@ -20,7 +25,7 @@ public class EnemyShot extends Shot {
 
     @Override
     public void testCollision(GameObject anotherGameObject) {
-        if (anotherGameObject instanceof EnemyShot || anotherGameObject instanceof EnemyB) {
+        if (anotherGameObject instanceof EnemyShot || anotherGameObject instanceof Enemy ) {
             return;
         }
         // método que fiz na classe shot pra conseguir colidir o tiro inimigo com o tiro normal

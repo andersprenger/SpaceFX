@@ -1,8 +1,9 @@
 package game;
 
-import game.entities.enemies.EnemyB;
-import game.entities.objects.Cannon;
-import game.object.GameObject;
+import game.entities.enemies.AngryInvaderB;
+import game.entities.enemies.InvaderB;
+import game.entities.player.Cannon;
+import game.objects.GameObject;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 
@@ -22,10 +23,12 @@ public class Game {
     private List<GameObject> activeGameObjects;
     private boolean gameOver;
     private int score;
+    private int lives;
 
     private Game() {
         gameOver = false;
         score = 0;
+        lives = 3;
     }
 
     public void setGameOver() {
@@ -42,6 +45,18 @@ public class Game {
 
     public void addScore() {
         score++;
+    }
+
+    public int getLives() {
+        return lives;
+    }
+
+    public void decreaseLives() {
+        lives--;
+
+        if (lives == 0) {
+            setGameOver();
+        }
     }
 
     public static Game getInstance() {
@@ -68,14 +83,10 @@ public class Game {
         cannon = new Cannon(400, 550);
         activeGameObjects.add(cannon);
 
-        // Adiciona bolas
+        // Adiciona Invaders
         for (int i = 0; i < 8; i++) {
-            activeGameObjects.add(new EnemyB(100 + (i * 60), 60 + i * 40));
+            activeGameObjects.add(new AngryInvaderB(100 + (i * 60), 60 + i * 40));
         }
-
-        //Adiciona pinguim
-//        activeCharacters.add(new Pinguim(100, 270));
-//        activeCharacters.add(new Pinguim(10,300));
 
         for (GameObject c : activeGameObjects) {
             c.start();

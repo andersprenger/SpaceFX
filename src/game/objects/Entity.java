@@ -1,8 +1,11 @@
-package game.object;
+package game.objects;
 
 import game.Game;
-import game.tool.Params;
+import game.tools.Params;
 import javafx.scene.canvas.GraphicsContext;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Represents the basic game character
@@ -20,9 +23,25 @@ public abstract class Entity implements GameObject {
     int posX, posY;
     int speed = 2;
 
+    List<Integer> collidersId;
+
+    public static int idGenerator = 0;
+
+    int id;
+
     public Entity(int startX, int startY) {
         posX = startX;
         posY = startY;
+
+        collidersId = new LinkedList<>();
+
+        id = idGenerator;
+        idGenerator++;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -47,7 +66,8 @@ public abstract class Entity implements GameObject {
 
     @Override
     public void testCollision(GameObject anotherGameObject) {
-        if (collided) {
+        if (collided || collidersId.contains(anotherGameObject.getId())) {
+            System.out.println(collidersId.contains(anotherGameObject.getId()));
             return;
         }
 
@@ -64,7 +84,8 @@ public abstract class Entity implements GameObject {
 
         // Verifica colisão
         if (p1x < op2x && p2x > op1x && p1y < op2y && p2y > op1y) {
-            collided = true;
+            collidersId.add(anotherGameObject.getId());
+            setCollide(true); // same for collided
         }
     }
 
@@ -75,31 +96,31 @@ public abstract class Entity implements GameObject {
     }
 
     public int getDirH() {
-        return (direction_horizontal);
+        return direction_horizontal;
     }
 
     public int getDirV() {
-        return (direction_vertical);
+        return direction_vertical;
     }
 
     public int getLMinH() {
-        return (lminH);
+        return lminH;
     }
 
     public int getLMaxH() {
-        return (lmaxH);
+        return lmaxH;
     }
 
     public int getLMinV() {
-        return (lminV);
+        return lminV;
     }
 
     public int getLMaxV() {
-        return (lmaxV);
+        return lmaxV;
     }
 
     public int getSpeed() {
-        return (speed);
+        return speed;
     }
 
     public void setPosX(int p) {
@@ -144,17 +165,17 @@ public abstract class Entity implements GameObject {
 
     @Override
     public boolean didCollide() {
-        return (collided);
+        return collided;
     }
 
     @Override
-    public void setCollide() {
+    public void setCollide(boolean b) {
         collided = true;
     }
 
     @Override
     public boolean isActive() {
-        return (active);
+        return active;
     }
 
     @Override

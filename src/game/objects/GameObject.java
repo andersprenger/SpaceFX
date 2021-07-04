@@ -1,15 +1,18 @@
-package game.object;
+package game.objects;
 
 import javafx.scene.canvas.GraphicsContext;
 
 /**
- * Represents the basic game character
+ * Represents the basic game object
  *
+ * @author Anderson Sprenger
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
 public interface GameObject {
     boolean isEnemy();
+
+    int getId();
 
     int getX();
 
@@ -23,7 +26,7 @@ public interface GameObject {
 
     boolean didCollide();
 
-    void setCollide();
+    void setCollide(boolean b);
 
     void start();
 

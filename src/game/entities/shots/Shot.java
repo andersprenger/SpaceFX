@@ -1,7 +1,7 @@
-package game.entities.objects;
+package game.entities.shots;
 
-import game.object.GameObject;
-import game.object.Entity;
+import game.objects.GameObject;
+import game.objects.Entity;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 
@@ -27,9 +27,9 @@ public class Shot extends Entity {
         // Não verifica colisão de um tiro com outro tiro
         if (anotherGameObject instanceof Shot) {
             return;
-        } else {
-            super.testCollision(anotherGameObject);
         }
+
+        super.testCollision(anotherGameObject);
     }
 
     public void superTestCollision(GameObject anotherGameObject) {
