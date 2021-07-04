@@ -1,7 +1,7 @@
 package game.entities.objects;
 
-import game.Character;
-import game.Entity;
+import game.object.GameObject;
+import game.object.Entity;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 
@@ -23,17 +23,17 @@ public class Shot extends Entity {
     }
 
     @Override
-    public void testCollision(Character anotherCharacter) {
+    public void testCollision(GameObject anotherGameObject) {
         // Não verifica colisão de um tiro com outro tiro
-        if (anotherCharacter instanceof Shot) {
+        if (anotherGameObject instanceof Shot) {
             return;
         } else {
-            super.testCollision(anotherCharacter);
+            super.testCollision(anotherGameObject);
         }
     }
 
-    public void superTestCollision(Character anotherCharacter) {
-        super.testCollision(anotherCharacter);
+    public void superTestCollision(GameObject anotherGameObject) {
+        super.testCollision(anotherGameObject);
     }
 
     @Override
@@ -48,11 +48,6 @@ public class Shot extends Entity {
                 deactivate();
             }
         }
-    }
-
-    @Override
-    public boolean isEnemy() {
-        return false;
     }
 
     @Override

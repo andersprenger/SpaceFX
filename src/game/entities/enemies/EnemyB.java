@@ -1,10 +1,10 @@
 package game.entities.enemies;
 
-import game.Character;
-import game.Entity;
+import game.object.GameObject;
 import game.Game;
-import game.Params;
+import game.tool.Params;
 import game.entities.objects.EnemyShot;
+import game.object.Enemy;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
@@ -15,35 +15,20 @@ import javafx.scene.image.Image;
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
-public class EnemyB extends Entity {
+public class EnemyB extends Enemy {
     private Image image;
     Integer baseSpeed = null;
 
     public EnemyB(int px, int py) {
         super(px, py);
 
-        try {
-            // Carrega a imagem ajustando a altura para 40 pixels
-            // mantendo a proporção em ambas dimensões
-            image = new Image("resources/enemies/3.png", 0, 40, true, true);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.exit(1);
-        }
+        setImage("resources/enemies/3.png");
     }
 
     public EnemyB(int px, int py, int speed) {
         super(px, py);
 
-        try {
-            // Carrega a imagem ajustando a altura para 40 pixels
-            // mantendo a proporção em ambas dimensões
-            image = new Image("resources/enemies/4.png", 0, 40, true, true);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.exit(1);
-        }
-
+        setImage("resources/enemies/3.png");
         setSpeed(speed);
         baseSpeed = speed;
     }
@@ -83,17 +68,12 @@ public class EnemyB extends Entity {
     }
 
     @Override
-    public boolean isEnemy() {
-        return true;
-    }
-
-    @Override
-    public void testCollision(Character anotherCharacter) {
-        if (anotherCharacter instanceof EnemyB || anotherCharacter instanceof EnemyShot) {
+    public void testCollision(GameObject anotherGameObject) {
+        if (anotherGameObject instanceof EnemyB || anotherGameObject instanceof EnemyShot) {
             return;
         }
 
-        super.testCollision(anotherCharacter);
+        super.testCollision(anotherGameObject);
     }
 
     public void draw(GraphicsContext graphicsContext) {

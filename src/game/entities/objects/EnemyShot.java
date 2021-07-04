@@ -1,6 +1,6 @@
 package game.entities.objects;
 
-import game.Character;
+import game.object.GameObject;
 import game.entities.enemies.EnemyB;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
@@ -19,12 +19,12 @@ public class EnemyShot extends Shot {
     }
 
     @Override
-    public void testCollision(Character anotherCharacter) {
-        if (anotherCharacter instanceof EnemyShot || anotherCharacter instanceof EnemyB) {
+    public void testCollision(GameObject anotherGameObject) {
+        if (anotherGameObject instanceof EnemyShot || anotherGameObject instanceof EnemyB) {
             return;
         }
         // método que fiz na classe shot pra conseguir colidir o tiro inimigo com o tiro normal
-        superTestCollision(anotherCharacter);
+        superTestCollision(anotherGameObject);
     }
 
     @Override

@@ -1,5 +1,8 @@
 package game.entities.enemies;
 
+import game.object.GameObject;
+import javafx.scene.canvas.GraphicsContext;
+
 /**
  * Represents a simple enemy that crosses the screen over and over again, has lives and shots
  *
@@ -7,6 +10,8 @@ package game.entities.enemies;
  */
 
 public class AngryEnemyB extends EnemyB {
+    boolean wasShot = false;
+
     public AngryEnemyB(int px, int py) {
         super(px, py);
     }
@@ -15,5 +20,19 @@ public class AngryEnemyB extends EnemyB {
         super(px, py, speed);
     }
 
+    @Override
+    public void testCollision(GameObject anotherGameObject) {
+        if (!wasShot) {
+            wasShot = true;
+            return;
+        }
 
+        super.testCollision(anotherGameObject);
+    }
+
+    @Override
+    public void draw(GraphicsContext graphicsContext) {
+
+        super.draw(graphicsContext);
+    }
 }

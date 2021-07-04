@@ -1,9 +1,8 @@
 package game;
 
-import game.entities.enemies.EnemyA;
 import game.entities.enemies.EnemyB;
 import game.entities.objects.Cannon;
-import game.entities.enemies.Pinguim;
+import game.object.GameObject;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 
@@ -20,7 +19,7 @@ import java.util.LinkedList;
 public class Game {
     private static Game game = null;
     private Cannon cannon;
-    private List<Character> activeCharacters;
+    private List<GameObject> activeGameObjects;
     private boolean gameOver;
     private int score;
 
@@ -52,33 +51,33 @@ public class Game {
         return game;
     }
 
-    public void addChar(Character c) {
-        activeCharacters.add(c);
+    public void addChar(GameObject c) {
+        activeGameObjects.add(c);
         c.start();
     }
 
-    public void eliminate(Character c) {
-        activeCharacters.remove(c);
+    public void eliminate(GameObject c) {
+        activeGameObjects.remove(c);
     }
 
     public void start() {
         // Repositório de personagens
-        activeCharacters = new LinkedList<>();
+        activeGameObjects = new LinkedList<>();
 
         // Adiciona o canhão
         cannon = new Cannon(400, 550);
-        activeCharacters.add(cannon);
+        activeGameObjects.add(cannon);
 
         // Adiciona bolas
         for (int i = 0; i < 8; i++) {
-            activeCharacters.add(new EnemyB(100 + (i * 60), 60 + i * 40));
+            activeGameObjects.add(new EnemyB(100 + (i * 60), 60 + i * 40));
         }
 
         //Adiciona pinguim
 //        activeCharacters.add(new Pinguim(100, 270));
 //        activeCharacters.add(new Pinguim(10,300));
 
-        for (Character c : activeCharacters) {
+        for (GameObject c : activeGameObjects) {
             c.start();
         }
     }
@@ -88,15 +87,15 @@ public class Game {
             return;
         }
 
-        if (activeCharacters.stream().noneMatch((e) -> (e.isEnemy()))) {
+        if (activeGameObjects.stream().noneMatch((e) -> (e.isEnemy()))) {
             // System.out.println("w/o enemies"); load another level
         }
 
-        for (int i = 0; i < activeCharacters.size(); i++) {
-            Character este = activeCharacters.get(i);
+        for (int i = 0; i < activeGameObjects.size(); i++) {
+            GameObject este = activeGameObjects.get(i);
             este.update(deltaTime);
-            for (int j = 0; j < activeCharacters.size(); j++) {
-                Character outro = activeCharacters.get(j);
+            for (int j = 0; j < activeGameObjects.size(); j++) {
+                GameObject outro = activeGameObjects.get(j);
                 if (este != outro) {
                     este.testCollision(outro);
                 }
@@ -109,7 +108,7 @@ public class Game {
     }
 
     public void draw(GraphicsContext graphicsContext) {
-        for (Character c : activeCharacters) {
+        for (GameObject c : activeGameObjects) {
             c.draw(graphicsContext);
         }
     }

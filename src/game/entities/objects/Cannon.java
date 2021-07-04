@@ -1,6 +1,9 @@
 package game.entities.objects;
 
 import game.*;
+import game.object.Entity;
+import game.tool.InputControl;
+import game.tool.Params;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Paint;
@@ -53,11 +56,6 @@ public class Cannon extends Entity implements InputControl {
         }
         //if (keyCode == KeyCode.UP) do nothing
         //if (keyCode == KeyCode.DOWN) do nothing
-    }
-
-    @Override
-    public boolean isEnemy() {
-        return false;
     }
 
     @Override

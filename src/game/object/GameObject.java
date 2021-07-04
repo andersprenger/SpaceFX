@@ -1,4 +1,4 @@
-package game;
+package game.object;
 
 import javafx.scene.canvas.GraphicsContext;
 
@@ -8,7 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
-public interface Character {
+public interface GameObject {
     boolean isEnemy();
 
     int getX();
@@ -19,7 +19,7 @@ public interface Character {
 
     int getWidth();
 
-    void testCollision(Character c);
+    void testCollision(GameObject c);
 
     boolean didCollide();
 

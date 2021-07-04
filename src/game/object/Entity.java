@@ -1,5 +1,7 @@
-package game;
+package game.object;
 
+import game.Game;
+import game.tool.Params;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
@@ -8,7 +10,7 @@ import javafx.scene.canvas.GraphicsContext;
  * @author Bernardo Copstein
  * @author Rafael Copstein
  */
-public abstract class Entity implements Character {
+public abstract class Entity implements GameObject {
     int direction_horizontal = 0, direction_vertical = 0;
     int lminV = 0, lmaxV = Params.WINDOW_HEIGHT;
     int lminH = 0, lmaxH = Params.WINDOW_WIDTH;
@@ -44,7 +46,7 @@ public abstract class Entity implements Character {
     }
 
     @Override
-    public void testCollision(Character anotherCharacter) {
+    public void testCollision(GameObject anotherGameObject) {
         if (collided) {
             return;
         }
@@ -55,15 +57,21 @@ public abstract class Entity implements Character {
         int p2x = p1x + this.getWidth();
         int p2y = p1y + this.getHeight();
 
-        int op1x = anotherCharacter.getX();
-        int op1y = anotherCharacter.getY();
-        int op2x = op1x + anotherCharacter.getWidth();
-        int op2y = op1y + anotherCharacter.getHeight();
+        int op1x = anotherGameObject.getX();
+        int op1y = anotherGameObject.getY();
+        int op2x = op1x + anotherGameObject.getWidth();
+        int op2y = op1y + anotherGameObject.getHeight();
 
         // Verifica colisão
         if (p1x < op2x && p2x > op1x && p1y < op2y && p2y > op1y) {
             collided = true;
         }
+    }
+
+    // por default, uma entidade não eh inimiga...
+    @Override
+    public boolean isEnemy() {
+        return false;
     }
 
     public int getDirH() {
