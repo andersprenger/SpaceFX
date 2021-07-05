@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
  *
  * @author Anderson Sprenger (19111109-5)
  */
-public abstract class GameoverViewController implements Initializable, InputControl {
+public abstract class GameoverViewController implements Initializable {
     @FXML Button goToMenuButton;
     @FXML Button tryAgainButton;
 

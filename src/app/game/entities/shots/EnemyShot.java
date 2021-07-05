@@ -23,7 +23,7 @@ public class EnemyShot extends Shot {
         if (anotherGameObject instanceof EnemyShot || anotherGameObject instanceof Enemy ) {
             return;
         }
-        // método que fiz na classe shot pra conseguir colidir o tiro inimigo com o tiro normal
+        // método para colidir o tiro inimigo com o tiro normal (superclasse)
         superTestCollision(anotherGameObject);
     }
 
