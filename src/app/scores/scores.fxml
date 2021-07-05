@@ -28,7 +28,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p1score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p1score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -49,7 +49,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p2score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p2score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -70,7 +70,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p3score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p3score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -91,7 +91,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p4score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p4score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -112,7 +112,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p5score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p5score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -133,7 +133,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p6score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p6score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -154,7 +154,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p7score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p7score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -175,7 +175,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p8score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p8score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -196,7 +196,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p9score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p9score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>
@@ -217,7 +217,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="p10score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="Score"
+            <Label fx:id="p10score" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" text="000000"
                    textAlignment="RIGHT" textFill="WHITE">
                 <font>
                     <Font name="Arial" size="24.0"/>

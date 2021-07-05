@@ -2,41 +2,36 @@ package app.gameover;
 
 import app.Main;
 import app.game.Game;
-import app.game.util.InputControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /**
- * GameoverViewController.java <p/>
- * Controls the game over screen represented by the gameover.fxml file.
+ * GameOverViewController.java
+ * Controls the game over screen represented by the gameOver.fxml file.
  *
  * @author Anderson Sprenger (19111109-5)
  */
-public abstract class GameoverViewController implements Initializable {
-    @FXML Button goToMenuButton;
-    @FXML Button tryAgainButton;
+public class GameOverViewController {
+    @FXML public Label scoreLabel;
+    @FXML public Label levelLabel;
 
-    @FXML Label scoreLabel;
-    @FXML Label levelLabel;
+    @FXML public Button goToMenuButton;
+    @FXML public Button tryAgainButton;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        scoreLabel.setText("Score: " + Game.getInstance().getScore());
-        levelLabel.setText("Level" + Game.getInstance().getLevel());
+    public void menuButton(ActionEvent e) throws IOException {
+        Main.screen.setScene(Main.startMenu());
     }
 
-    public void buttonPressed(ActionEvent e) throws IOException {
-        if (e.getSource().equals(goToMenuButton)) {
-            Main.screen.setScene(Main.startMenu());
-        } else if (e.getSource().equals(tryAgainButton)) {
-            Main.screen.setScene(Main.startGame());
-        }
+    public void tryAgainButton(ActionEvent e) {
+        Main.screen.setScene(Main.startGame());
+    }
+
+    @FXML public void initialize() {
+        scoreLabel.setText("Score: " + Game.getInstance().getScore());
+        levelLabel.setText("Level: " + Game.getInstance().getLevel());
     }
 }

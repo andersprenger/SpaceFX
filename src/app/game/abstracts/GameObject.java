@@ -16,6 +16,8 @@ public interface GameObject {
 
     void addCollider(GameObject o);
 
+    void setSpeed(int speed);
+
     int getX();
 
     int getY();

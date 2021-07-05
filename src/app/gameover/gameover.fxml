@@ -4,9 +4,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:id="pane" alignment="CENTER" hgap="10" style="-fx-background-color: black;" vgap="10"
-          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="app.gameover.GameoverViewController">
+<GridPane alignment="CENTER" hgap="10" style="-fx-background-color: black;" vgap="10"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gameover.GameOverViewController">
 
     <Label fx:id="scoreLabel" text="Score: 00000" textFill="WHITE" GridPane.rowIndex="0">
         <font>
@@ -23,8 +22,8 @@
     <HBox spacing="20" GridPane.rowIndex="2">
 
         <!--sem default button porque eh muito easy apertar por engano-->
-        <Button fx:id="goToMenuButton" text="Menu" onAction="#buttonPressed" prefWidth="80"/>
-        <Button fx:id="tryAgainButton" text="Try Again" onAction="#buttonPressed" prefWidth="80"/>
+        <Button fx:id="goToMenuButton" onAction="#menuButton" text="Menu"  prefWidth="80"/>
+        <Button fx:id="tryAgainButton" text="Try Again" onAction="#tryAgainButton" prefWidth="80"/>
 
     </HBox>
 

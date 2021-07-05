@@ -1,9 +1,13 @@
 package app.game;
 
 import app.Main;
+import app.game.entities.enemies.AngryInvaderA;
 import app.game.entities.enemies.AngryInvaderB;
+import app.game.entities.enemies.InvaderA;
+import app.game.entities.enemies.InvaderB;
 import app.game.entities.player.Cannon;
 import app.game.abstracts.GameObject;
+import app.game.util.Params;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 
@@ -31,6 +35,7 @@ public class Game {
         gameOver = false;
         score = 0;
         lives = 3;
+        level = 1;
     }
 
     public void setGameOver() {
@@ -39,6 +44,37 @@ public class Game {
             Main.screen.setScene(Main.startGameOver());
         } catch (IOException e) {
             System.err.println(e);
+        }
+    }
+
+    public void loadLevel() {
+        if (level == 1) {
+                activeGameObjects.add(new InvaderA(100 + (1 * 60), 60 + 1 * 40));
+                activeGameObjects.add(new InvaderA(100 + (2 * 60), 60 + 2 * 40));
+                activeGameObjects.add(new InvaderB(100 + (3 * 60), 60 + 3 * 40));
+                activeGameObjects.add(new InvaderB(100 + (4 * 60), 60 + 4 * 40));
+                activeGameObjects.add(new AngryInvaderA(100 + (5 * 60), 60 + 5 * 40));
+                activeGameObjects.add(new AngryInvaderB(100 + (6 * 60), 60 + 6 * 40));
+        } else if (level % 2 == 0) {
+            for (int i = 0; i < level * 3; i++) {
+                activeGameObjects.add(new InvaderB(100 + (i * 60), 60 + i * 40, level * 2));
+            }
+
+            if (level >= 4) {
+                for (int i = 0; i < level * 2; i++) {
+                    activeGameObjects.add(new AngryInvaderB(Params.getInstance().nextInt(4) * 60, 60 + i * 40, level * 2));
+                }
+            }
+        } else {
+            for (int i = 0; i < level * 3; i++) {
+                activeGameObjects.add(new InvaderA(100 + (i * 60), 60 + i * 40, level * 2));
+            }
+
+            if (level >= 4) {
+                for (int i = 0; i < level * 2; i++) {
+                    activeGameObjects.add(new AngryInvaderA(Params.getInstance().nextInt(4) * 60, 60 + i * 40, level * 2));
+                }
+            }
         }
     }
 
@@ -51,7 +87,7 @@ public class Game {
     }
 
     public void addScore() {
-        score++;
+        score += 10;
     }
 
     public int getLives() {
@@ -90,6 +126,9 @@ public class Game {
         //seta gameover para false, case try again...
         gameOver = false;
 
+        // level comeca do 1
+        level = 1;
+
         // Repositório de personagens
         activeGameObjects = new LinkedList<>();
 
@@ -99,7 +138,7 @@ public class Game {
 
         // Adiciona Invaders
         for (int i = 0; i < 8; i++) {
-            activeGameObjects.add(new AngryInvaderB(100 + (i * 60), 60 + i * 40));
+            loadLevel();
         }
 
         for (GameObject c : activeGameObjects) {
@@ -113,7 +152,8 @@ public class Game {
         }
 
         if (activeGameObjects.stream().noneMatch((e) -> (e.isEnemy()))) {
-            setGameOver();
+            level++;
+            loadLevel();
         }
 
         for (int i = 0; i < activeGameObjects.size(); i++) {
